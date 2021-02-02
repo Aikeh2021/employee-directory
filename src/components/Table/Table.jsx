@@ -72,12 +72,12 @@ const Table = () => {
         <tbody>
           {users.map((user) => (
               <tr>
-              <th className="s2">1215614321</th>
-              <td className="s2"><img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="User's thumbnail"/></td>
-              <td className="s2">Zach Effron</td>
-              <td className="s2">hsm2@yahoo.com</td>
-              <td className="s2">888-888-8878</td>
-              <td className="s2">7/7/1989</td>
+              <th className="s2">{user.id.value}</th>
+              <td className="s2"><img src={user.picture.thumbnail} alt="User's thumbnail"/></td>
+              <td className="s2">{user.name.first} {user.name.last}</td>
+              <td className="s2">{user.email}</td>
+              <td className="s2">{user.phone}</td>
+              <td className="s2">{user.dob.date}</td>
             </tr>
           ))}
 
