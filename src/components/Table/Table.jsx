@@ -10,13 +10,17 @@ const Table = () => {
             setUsers(response.data.results);
         })
     }, []);
+
+    const sortByName = () => {
+        console.log("I was clicked!")
+    }
     return (
         <table className="striped">
         <thead>
           <tr>
               <th className="s2">ID</th>
               <th className="s2">Photo</th>
-              <th className="s2">Name </th>
+              <th className="s2" onClick={sortByName}>Name </th>
               <th className="s2">Email</th>
               <th className="s2">Phone Number</th>
               <th className="s2">Date of Birth (DOB)</th>

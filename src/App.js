@@ -6,8 +6,8 @@ const App = () => {
   return (
     <>
     <Header />
+    <div className="divider"></div>
     <div className="container">
-      <div className="divider"></div>
       <div className="row">
         <div className="col s12">
         <Table />
