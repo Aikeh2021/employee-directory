@@ -16,7 +16,7 @@ const Table = () => {
           <tr>
               <th className="s2">ID</th>
               <th className="s2">Photo</th>
-              <th className="s2">Name (first and last)</th>
+              <th className="s2">Name </th>
               <th className="s2">Email</th>
               <th className="s2">Phone Number</th>
               <th className="s2">Date of Birth (DOB)</th>

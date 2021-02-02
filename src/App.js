@@ -4,10 +4,9 @@ import Header from './components/Header/Header';
 
 const App = () => {
   return (
+    <>
+    <Header />
     <div className="container">
-      <div className="row">
-        <Header />
-      </div>
       <div className="divider"></div>
       <div className="row">
         <div className="col s12">
@@ -15,7 +14,7 @@ const App = () => {
         </div>
       </div>
     </div>
-
+    </>
   );
 };
 
