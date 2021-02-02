@@ -1,4 +1,7 @@
 import React from 'react';
+import { useState} from 'react';
+
+
 
 const Table = () => {
     return (
@@ -17,7 +20,7 @@ const Table = () => {
         <tbody>
           <tr>
             <th className="s2">1215614321</th>
-            <td className="s2"><img src="https://randomuser.me/api/portraits/thumb/men/75.jpg"/></td>
+            <td className="s2"><img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="User's thumbnail"/></td>
             <td className="s2">Zach Effron</td>
             <td className="s2">hsm2@yahoo.com</td>
             <td className="s2">888-888-8878</td>
@@ -25,7 +28,7 @@ const Table = () => {
           </tr>
           <tr>
             <th className="s2">1215614321</th>
-            <td className="s2"><img src="https://randomuser.me/api/portraits/thumb/men/75.jpg"/></td>
+            <td className="s2"><img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="User's thumbnail"/></td>
             <td className="s2">Zendaya Coleman</td>
             <td className="s2">hsm@yahoo.com</td>
             <td className="s2">888-888-8878</td>
@@ -33,7 +36,7 @@ const Table = () => {
           </tr>
           <tr>
             <th className="s2">1215614321</th>
-            <td className="s2"><img src="https://randomuser.me/api/portraits/thumb/men/75.jpg"/></td>
+            <td className="s2"><img src="https://randomuser.me/api/portraits/thumb/men/75.jpg" alt="User's thumbnail"/></td>
             <td className="s2">Vanessa Hudgens</td>
             <td className="s2">hsm@yahoo.com</td>
             <td className="s2">888-888-8878</td>
