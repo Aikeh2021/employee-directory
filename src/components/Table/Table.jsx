@@ -5,6 +5,7 @@ const Table = () => {
   const [users, setUsers] = useState([]);
   const [usersToDisplay, setUsersToDisplay] = useState([]);
   const [sortDirection, setSortDirection] = useState("asc");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios.get("https://randomuser.me/api/?results=30").then((response) => {
@@ -53,10 +54,10 @@ const Table = () => {
   return (
     <div>
       <div>
-          <input type="text" placeholder="Enter phone number to filter by phone"/>
-          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">search</i>
-  </button>
+          <input type="text" placeholder="Enter phone number to filter by phone" name="searchTerm" value={searchTerm} onChange={(e) => {
+              setSearchTerm(e.target.value);
+          }}/>
+          <button class="btn waves-effect waves-light">Search<i class="material-icons right">search</i></button>
       </div>
       <div>
         <table className="striped">
