@@ -6,8 +6,6 @@ const Table = () => {
   const [usersToDisplay, setUsersToDisplay] = useState([]);
   const [sortDirection, setSortDirection] = useState("asc");
 
-
-
   useEffect(() => {
     axios.get("https://randomuser.me/api/?results=30").then((response) => {
       setUsersToDisplay(response.data.results);
@@ -16,15 +14,15 @@ const Table = () => {
   }, []);
 
   const sortByName = () => {
-    if(sortDirection === "asc"){
-        sortByNameAsc();
-        setSortDirection("des");
+    if (sortDirection === "asc") {
+      sortByNameAsc();
+      setSortDirection("des");
     } else {
-        sortByNameDes();
-        setSortDirection("asc");
-    } 
+      sortByNameDes();
+      setSortDirection("asc");
+    }
   };
-const sortByNameAsc = () => {
+  const sortByNameAsc = () => {
     console.log("I was clicked! Trigger sort ascending!!!");
     let tempUsers = [...users];
     const sortedUsers = tempUsers.sort((a, b) => {
@@ -36,9 +34,9 @@ const sortByNameAsc = () => {
     });
     // console.log(sortedUsers);
     setUsersToDisplay(sortedUsers);
-}
+  };
 
-const sortByNameDes = () => {
+  const sortByNameDes = () => {
     console.log("I was clicked! I am descending!!!");
     let tempUsers = [...users];
     const sortedUsers = tempUsers.sort((a, b) => {
@@ -50,40 +48,50 @@ const sortByNameDes = () => {
     });
     // console.log(sortedUsers);
     setUsersToDisplay(sortedUsers);
-}
+  };
 
   return (
-    <table className="striped">
-      <thead>
-        <tr>
-          <th className="s2">ID</th>
-          <th className="s2">Photo</th>
-          <th className="s2" onClick={sortByName}>
-            Name{" "}
-          </th>
-          <th className="s2">Email</th>
-          <th className="s2">Phone Number</th>
-          <th className="s2">Date of Birth (DOB)</th>
-        </tr>
-      </thead>
+    <div>
+      <div>
+          <input type="text" placeholder="Enter phone number to filter by phone"/>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">search</i>
+  </button>
+      </div>
+      <div>
+        <table className="striped">
+          <thead>
+            <tr>
+              <th className="s2">ID</th>
+              <th className="s2">Photo</th>
+              <th className="s2" onClick={sortByName}>
+                Name{" "}
+              </th>
+              <th className="s2">Email</th>
+              <th className="s2">Phone Number</th>
+              <th className="s2">Date of Birth (DOB)</th>
+            </tr>
+          </thead>
 
-      <tbody>
-        {usersToDisplay.map((user, index) => (
-          <tr key={index}>
-            <th className="s2">{user.id.value}</th>
-            <td className="s2">
-              <img src={user.picture.thumbnail} alt="User's thumbnail" />
-            </td>
-            <td className="s2">
-              {user.name.first} {user.name.last}
-            </td>
-            <td className="s2">{user.email}</td>
-            <td className="s2">{user.phone}</td>
-            <td className="s2">{user.dob.date}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          <tbody>
+            {usersToDisplay.map((user, index) => (
+              <tr key={index}>
+                <th className="s2">{user.id.value}</th>
+                <td className="s2">
+                  <img src={user.picture.thumbnail} alt="User's thumbnail" />
+                </td>
+                <td className="s2">
+                  {user.name.first} {user.name.last}
+                </td>
+                <td className="s2">{user.email}</td>
+                <td className="s2">{user.phone}</td>
+                <td className="s2">{user.dob.date}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 
