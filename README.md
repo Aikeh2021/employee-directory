@@ -16,7 +16,7 @@ To view more information about how to use this application, view the installatio
 ## Installation
 
 To view the github repository for this website [click here](https://github.com/Aikeh2021/employee-directory). Git clone the SSH key and customize the users information to contain an array of objects with the information of the employees you would like to display. Feel free to alter the information available on the chart to better match your needs. For example, instead of date of birth, you may be interested in dispalying an office number, or a staff member's specific area of expertise.
-Otherwise, to view the deployed website and test its functionality, [click here]().
+Otherwise, to view the deployed website and test its functionality, [click here](https://aikeh2021.github.io/employee-directory/).
 
 ## Usage
 
