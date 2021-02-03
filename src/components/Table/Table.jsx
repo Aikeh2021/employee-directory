@@ -14,6 +14,19 @@ const Table = () => {
     });
   }, []);
 
+  const handleSubmit = (e) => {
+        e.preventDefault();
+      const filteredUsers = users.filter(user => {
+          return user.phone.includes(searchTerm);
+      })
+      setUsersToDisplay(filteredUsers);
+  }
+
+  const handleReset = () => {
+      setUsersToDisplay(users);
+      setSearchTerm("");
+  }
+
   const sortByName = () => {
     if (sortDirection === "asc") {
       sortByNameAsc();
@@ -54,10 +67,13 @@ const Table = () => {
   return (
     <div>
       <div>
+        <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Enter phone number to filter by phone" name="searchTerm" value={searchTerm} onChange={(e) => {
               setSearchTerm(e.target.value);
           }}/>
           <button class="btn waves-effect waves-light">Search<i class="material-icons right">search</i></button>
+          <button class="btn waves-effect waves-light" onClick={handleReset} type="button">Clear<i class="material-icons right">clear</i></button>
+          </form>
       </div>
       <div>
         <table className="striped">
