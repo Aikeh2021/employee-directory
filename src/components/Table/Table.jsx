@@ -4,7 +4,9 @@ import axios from "axios";
 const Table = () => {
   const [users, setUsers] = useState([]);
   const [usersToDisplay, setUsersToDisplay] = useState([]);
-  
+  const [sortDirection, setSortDirection] = useState("asc");
+
+
 
   useEffect(() => {
     axios.get("https://randomuser.me/api/?results=30").then((response) => {
@@ -14,7 +16,16 @@ const Table = () => {
   }, []);
 
   const sortByName = () => {
-    console.log("I was clicked!");
+    if(sortDirection === "asc"){
+        sortByNameAsc();
+        setSortDirection("des");
+    } else {
+        sortByNameDes();
+        setSortDirection("asc");
+    } 
+  };
+const sortByNameAsc = () => {
+    console.log("I was clicked! Trigger sort ascending!!!");
     let tempUsers = [...users];
     const sortedUsers = tempUsers.sort((a, b) => {
       let nameA = a.name.first;
@@ -23,9 +34,23 @@ const Table = () => {
       if (nameA > nameB) return 1;
       return 0;
     });
-    console.log(sortedUsers);
+    // console.log(sortedUsers);
     setUsersToDisplay(sortedUsers);
-  };
+}
+
+const sortByNameDes = () => {
+    console.log("I was clicked! I am descending!!!");
+    let tempUsers = [...users];
+    const sortedUsers = tempUsers.sort((a, b) => {
+      let nameA = a.name.first;
+      let nameB = b.name.first;
+      if (nameA > nameB) return -1;
+      if (nameA < nameB) return 1;
+      return 0;
+    });
+    // console.log(sortedUsers);
+    setUsersToDisplay(sortedUsers);
+}
 
   return (
     <table className="striped">

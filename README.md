@@ -41,3 +41,4 @@ SOFTWARE.
 * [GA Tech Logo](https://www.brandsoftheworld.com/logo/georgia-tech-yellowjackets)
 * [Materialize](https://materializecss.com/)
 * [Random User Generator](https://randomuser.me/)
+* [How to Sort An Array of Objects Alphabetically](http://www.javascriptkit.com/javatutors/arraysort2.shtml)
