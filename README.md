@@ -53,3 +53,4 @@ SOFTWARE.
 * [Random User Generator](https://randomuser.me/)
 * [How to Sort An Array of Objects Alphabetically](http://www.javascriptkit.com/javatutors/arraysort2.shtml)
 * [How to Deploy a React App To GH Pages](https://www.youtube.com/watch?v=laXUruhdX90)
+* [Deployment](https://create-react-app.dev/docs/deployment/#github-pages)
