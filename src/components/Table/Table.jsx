@@ -3,17 +3,20 @@ import axios from "axios";
 
 const Table = () => {
   const [users, setUsers] = useState([]);
+  const [usersToDisplay, setUsersToDisplay] = useState([]);
+  
 
   useEffect(() => {
     axios.get("https://randomuser.me/api/?results=30").then((response) => {
-      console.log(response.data);
+      setUsersToDisplay(response.data.results);
       setUsers(response.data.results);
     });
   }, []);
 
   const sortByName = () => {
     console.log("I was clicked!");
-    const sortedUsers = users.sort((a, b) => {
+    let tempUsers = [...users];
+    const sortedUsers = tempUsers.sort((a, b) => {
       let nameA = a.name.first;
       let nameB = b.name.first;
       if (nameA < nameB) return -1;
@@ -21,6 +24,7 @@ const Table = () => {
       return 0;
     });
     console.log(sortedUsers);
+    setUsersToDisplay(sortedUsers);
   };
 
   return (
@@ -39,8 +43,8 @@ const Table = () => {
       </thead>
 
       <tbody>
-        {users.map((user) => (
-          <tr key={user.id.value}>
+        {usersToDisplay.map((user, index) => (
+          <tr key={index}>
             <th className="s2">{user.id.value}</th>
             <td className="s2">
               <img src={user.picture.thumbnail} alt="User's thumbnail" />
