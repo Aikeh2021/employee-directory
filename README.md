@@ -1,10 +1,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 # Employee Directory
 
+There's nothing more helpful than having a directory of your employees' information complete with a picture of each of their smiling faces! Once of the great things about the Employee Directory is that you have access to a sortable table that allows you to view all of the informaiton about your staff in a neat and easy to follow website. 
 
 ## Contents
 
+* [Installation](#installation)
+* [Usage](#usage)
 * [License](#license)
+* [Credits](#credits)
+
 
 
 ## License
@@ -30,3 +35,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Credits
+
+* [GA Tech Logo](https://www.brandsoftheworld.com/logo/georgia-tech-yellowjackets)
+* [Materialize](https://materializecss.com/)
+* [Random User Generator](https://randomuser.me/)

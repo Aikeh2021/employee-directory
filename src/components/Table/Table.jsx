@@ -13,6 +13,9 @@ const Table = () => {
 
     const sortByName = () => {
         console.log("I was clicked!")
+        const sortedUsers = users.sort((a,b) => b.name.first - a.name.first)
+        console.log(sortedUsers);
+
     }
     return (
         <table className="striped">
@@ -29,7 +32,7 @@ const Table = () => {
 
         <tbody>
           {users.map((user) => (
-              <tr>
+              <tr key={user.id.value}>
               <th className="s2">{user.id.value}</th>
               <td className="s2"><img src={user.picture.thumbnail} alt="User's thumbnail"/></td>
               <td className="s2">{user.name.first} {user.name.last}</td>
